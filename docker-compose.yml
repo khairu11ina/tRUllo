@@ -1,0 +1,38 @@
+version: '3.3'
+
+services:
+  fe:
+    container_name: trullo-front-end
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/usr/src/app/trullo
+      - /usr/src/app/trullo/node_modules
+      - /usr/src/app/trullo/.next
+      - /usr/src/app/trullo/.husky
+    env_file:
+      - .env.development
+    depends_on:
+      - mongodb
+    networks:
+      - trullo-app
+
+  mongodb:
+    container_name: trullo-mongo
+    image: mongo:4.4-bionic
+    volumes:
+      - trullo-db:/data/db
+    ports:
+      - 27017:27017
+    networks:
+      - trullo-app
+
+networks:
+  trullo-app:
+    driver: bridge
+
+volumes:
+  trullo-db:
