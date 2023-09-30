@@ -1,7 +1,7 @@
 {
   "name": "tRUllo App",
   "version": "1.0.0",
-  "description": "Сервис работает по принципам методологии Kanban, которая является частью философии Agile",
+  "description": "The service operates according to the principles of the Kanban methodology, which is part of the Agile philosophy",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
