@@ -2,6 +2,9 @@
   "name": "trullo",
   "version": "1.0.0",
   "description": "The service operates according to the principles of the Kanban methodology, which is part of the Agile philosophy",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
